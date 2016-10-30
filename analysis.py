@@ -105,6 +105,14 @@ print 'Total neg words:', len(neg_words)
 for word in neg_words[:40]:
     print word
 
+with open('pos_df.csv', 'a') as f:
+    for item in pos_df:
+        f.write('{0},{1},{2}\n'.format(item[0][0], item[0][1], item[1]))
+
+with open('neg_df.csv', 'a') as f:
+    for item in neg_df:
+        f.write('{0},{1},{2}\n'.format(item[0][0], item[0][1], item[1]))
+
 print 'IDF pos'
 for word in pos_df[:40]:
     print word
